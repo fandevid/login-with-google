@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-signin-client_id" content="963527417176-u3d1p9pjhccf44k4qq6d6erhbipjnip8.apps.googleusercontent.com" />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <title>Document</title>
+    <style type="text/css">
+      .abcRioButton {
+        display: inline-block !important;
+        background: white !important;
+        color: #444 !important;
+        width: 190px !important;
+        border-radius: 5px !important;
+        border: thin solid #888 !important;
+        box-shadow: 1px 1px 1px grey !important;
+        white-space: nowrap !important;
+      }
+      .abcRioButton:hover {
+        cursor: pointer !important;
+      }
+      .abcRioButtonIcon {
+        /* background: url("/identity/sign-in/g-normal.png") transparent 5px 50% no-repeat; */
+        display: inline-block !important;
+        vertical-align: middle !important;
+        width: 42px !important;
+        height: 42px !important;
+      }
+      .abcRioButtonContents {
+        display: inline-block !important;
+        vertical-align: middle !important;
+        padding-left: 42px !important;
+        padding-right: 42px !important;
+        font-size: 14px !important;
+        font-weight: bold !important;
+        /* Use the Roboto font that is loaded in the <head> */
+        font-family: "Roboto", sans-serif !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+    <script>
+      function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        console.log("Name: " + profile.getName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail()); // This is null if the 'email' scope is not present.
+      }
+    </script>
+  </body>
+</html>
